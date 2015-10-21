@@ -37,6 +37,7 @@ import com.txy.tools.SortModel;
 
 public class MainActivity extends Activity implements OnClickListener,
 		RemoveListener {
+
 	private ListView sortListView;
 	private SideBar sideBar;
 	private TextView dialog;
@@ -72,6 +73,7 @@ public class MainActivity extends Activity implements OnClickListener,
 
 		// ³õÊ¼»¯DBManager
         dbManager = new DBManager(this);
+//        dbManager.deleteAll();
 //        ArrayList<SortModel> persons = new ArrayList<SortModel>();
 //        SortModel p1 = new SortModel();
 //        p1.setName("Ì·ÐÂÑô");
@@ -247,7 +249,15 @@ public class MainActivity extends Activity implements OnClickListener,
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		Log.i("mytag", "resume");
+		initViews();
+	}
+	
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub

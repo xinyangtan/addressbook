@@ -10,12 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 public class SortAdapter extends BaseAdapter implements SectionIndexer{
 	private List<SortModel> list = null;
 	private Context mContext;
+	private int mode = 1; // 1,查看模式 2，批量编辑模式
 	
 	public SortAdapter(Context mContext, List<SortModel> list) {
 		this.mContext = mContext;
@@ -53,6 +55,8 @@ public class SortAdapter extends BaseAdapter implements SectionIndexer{
 			viewHolder.tvLocation = (TextView) view.findViewById(R.id.location);
 			viewHolder.tvPhoneNum = (TextView) view.findViewById(R.id.title);
 			viewHolder.tvLetter = (TextView) view.findViewById(R.id.catalog);
+			viewHolder.checkBox = (CheckBox) view.findViewById(R.id.checkBox);
+			viewHolder.checkBox.setVisibility(View.GONE);
 			view.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) view.getTag();
@@ -70,6 +74,7 @@ public class SortAdapter extends BaseAdapter implements SectionIndexer{
 		}
 	
 		viewHolder.tvName.setText(this.list.get(position).getName());
+		viewHolder.tvPhoneNum.setText(this.list.get(position).getPhoneList()[0]);
 		
 		return view;
 
@@ -82,6 +87,7 @@ public class SortAdapter extends BaseAdapter implements SectionIndexer{
 		TextView tvName;
 		TextView tvLocation;
 		TextView tvPhoneNum;
+		CheckBox checkBox;
 	}
 
 

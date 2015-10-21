@@ -103,7 +103,7 @@ public class MainActivity extends Activity implements OnClickListener,
 
 		myadapter = new MyAdapter(this);
 
-		adapter = new ArrayAdapter<String>(this, R.layout.list, R.id.add_detail_nametv,
+		adapter = new ArrayAdapter<String>(this, R.layout.list, R.id.list_nametv,
 				dataSourceList);
 		slideCutListView.setAdapter(myadapter);
 

@@ -1,51 +1,74 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
     tools:context=".AddDetailActivity" >
 
-    <TextView
-        android:id="@+id/no_user_tips_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="姓名" />
+    <ScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/add_detail_del_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
 
-    <TextView
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <com.txy.addressbook.CircleImage
+                    android:id="@+id/add_detail_headimage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cur_head_image" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <EditText
+                        android:id="@+id/add_detail_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:ems="10"
+                        android:text="姓名" >
+
+                        <requestFocus />
+                    </EditText>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/add_detail_phonenum_linearlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/add_detail_del_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="这是编辑或查看或添加的详情页面" />
-
-    <TextView
-        android:id="@+id/add_detail_nametv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/no_user_tips_tv"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/no_user_tips_tv"
-        android:text="ttt" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/no_user_tips_tv"
-        android:layout_marginTop="14dp"
-        android:text="手机" />
-
-    <TextView
-        android:id="@+id/add_detail_phonenumtv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/textView3"
-        android:text="123456" />
+        android:layout_marginRight="10dp"
+        android:background="@drawable/del_button_regist"
+        android:text="删除" />
 
 </RelativeLayout>

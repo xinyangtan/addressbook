@@ -63,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper// ºÃ≥–SQLiteOpenHelper¿‡
         StringBuffer sBuffer = new StringBuffer();
 
         sBuffer.append("CREATE TABLE [" + TABLE_NAME + "] (");
-        sBuffer.append("[_id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ");
+        sBuffer.append("[id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ");
         sBuffer.append("[name] TEXT,");
         sBuffer.append("[phonenum] TEXT,");
         sBuffer.append("[sortLetters] TEXT)");

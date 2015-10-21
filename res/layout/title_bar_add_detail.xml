@@ -14,15 +14,6 @@
         android:text="通讯录"
         android:textSize="20dp" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
-        android:src="@drawable/addressbook_ico" />
-
     <Button
         android:id="@+id/titlebar_add_detail_rbutton"
         android:layout_width="wrap_content"
@@ -32,6 +23,17 @@
         android:layout_marginRight="10dp"
         android:background="#00000000"
         android:text="完成"
+        android:textColor="#00FFFF" />
+
+    <Button
+        android:id="@+id/titlebar_add_detail_lbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="#00000000"
+        android:text="所有联系人"
         android:textColor="#00FFFF" />
 
 </RelativeLayout>

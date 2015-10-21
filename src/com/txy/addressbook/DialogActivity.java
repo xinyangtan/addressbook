@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
  */  
 public class DialogActivity extends Activity implements OnClickListener{  
     private LinearLayout layout01,layout02,layout03,layout04;  
-      
+    
     @Override  
     protected void onCreate(Bundle savedInstanceState) {  
         super.onCreate(savedInstanceState);  
@@ -49,10 +49,15 @@ public class DialogActivity extends Activity implements OnClickListener{
           if (v == layout01) {
         	  Log.i("mylog", "touch add");
         	  finish();
-        	  startActivity(new Intent(DialogActivity.this, AddDetailActivity.class));
+  			Intent intent = new Intent(DialogActivity.this,
+  					AddDetailActivity.class);
+			intent.putExtra("mode", AddDetailActivity.ADD_MODE);
+			startActivity(intent);
           }
           if (v == layout02) {
         	  Log.i("mylog", "touch multi");
+        	  finish();
+        	  
           }
     }  
 }  
