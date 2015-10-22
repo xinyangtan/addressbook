@@ -223,7 +223,11 @@ public class MainActivity extends Activity implements OnClickListener,
 	 */
 	private void filterData(String filterStr) {
 		List<SortModel> filterDateList = new ArrayList<SortModel>();
+		String reg = "[a-zA-Z]";
 
+		if(filterStr.matches(reg)) {
+			filterStr = filterStr.toLowerCase();
+		}
 		if (TextUtils.isEmpty(filterStr)) {
 			filterDateList = SourceDateList;
 		} else {
@@ -231,8 +235,8 @@ public class MainActivity extends Activity implements OnClickListener,
 			for (SortModel sortModel : SourceDateList) {
 				String name = sortModel.getName();
 				if (name.indexOf(filterStr.toString()) != -1
-						|| characterParser.getSelling(name).startsWith(
-								filterStr.toString())) {
+						|| characterParser.getSelling(name).startsWith(filterStr.toString())
+						|| characterParser.getSelling(name).indexOf(filterStr.toString()) != -1) {
 					filterDateList.add(sortModel);
 				}
 			}

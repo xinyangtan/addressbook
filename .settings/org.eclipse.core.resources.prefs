@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/com/example/sortlistview=GBK
 encoding//src/com/txy/tools=GBK
+encoding//src/com/txy/tools/DatabaseDAO.java=UTF-8
 encoding//src/com/txy/tools/DatabaseHelper.java=GBK
 encoding/<project>=UTF-8

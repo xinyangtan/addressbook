@@ -3,6 +3,7 @@ package com.example.sortlistview;
 import java.util.List;
 
 import com.txy.addressbook.R;
+import com.txy.tools.PhonenumLocation;
 import com.txy.tools.SortModel;
 
 import android.content.Context;
@@ -75,6 +76,9 @@ public class SortAdapter extends BaseAdapter implements SectionIndexer{
 	
 		viewHolder.tvName.setText(this.list.get(position).getName());
 		viewHolder.tvPhoneNum.setText(this.list.get(position).getPhoneList()[0]);
+		
+		String location = new PhonenumLocation(mContext).getLocation(this.list.get(position).getPhoneList()[0]);
+		viewHolder.tvLocation.setText(location);
 		
 		return view;
 

@@ -184,24 +184,29 @@ public class AddDetailActivity extends Activity implements OnClickListener{
 	}
 	
 	private void saveData() {
-		this.fillData();
-		dbManager.add(this.person);
-		Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
+		if (this.fillData()) {
+			dbManager.add(this.person);
+			Toast.makeText(this, "保存成功", Toast.LENGTH_SHORT).show();
+		}
 	}
 	
 	private void updateData() {
-		this.fillData();
-		dbManager.updatePerson(this.person);
-		Toast.makeText(this, "修改成功", Toast.LENGTH_SHORT).show();
+		if (this.fillData()) {
+			dbManager.updatePerson(this.person);
+			Toast.makeText(this, "修改成功", Toast.LENGTH_SHORT).show();
+		}
 	}
 
-	private void fillData() {
+	private boolean fillData() {
 		String name = this.nameTV.getText().toString();
 		// 汉字转换成拼音
 		String pinyin = characterParser.getSelling(name);
+		if (pinyin.equals("")) {
+			return false;
+		}
 		String sortLetters = pinyin.substring(0, 1).toUpperCase();
 
-		this.person.setName(name, sortLetters);
+		this.person.setName(name, sortLetters, pinyin);
 		String phoneString = "";
 		for (PhoneItemHolder p: this.phoneItem) {
 			String phonenum = p.phoneTV.getText().toString();
@@ -214,6 +219,7 @@ public class AddDetailActivity extends Activity implements OnClickListener{
 		this.person.setEmail(this.emailTV.getText().toString());
 		this.person.setQq(this.qqTV.getText().toString());
 		this.person.setWechat(this.wechatTV.getText().toString());
+		return true;
 	}
 	
 	private void call(String num) {

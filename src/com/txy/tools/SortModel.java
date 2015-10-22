@@ -22,22 +22,26 @@ public class SortModel implements Serializable{
 	private String email;
 	private String qq;
 	private String wechat;
+	private String pinyin;
 	
 	private String[] phoneList;
 	
 	public String getName() {
 		return name;
 	}
-	public void setName(String name, String sortLetters) {
+	public void setName(String name, String sortLetters, String pinyin) {
 		this.name = name;
 		this.sortLetters = sortLetters;
+		this.pinyin = pinyin;
 	}
 	public String getPhonenum() {
 		return phonenum;
 	}
 	public void setPhonenum(String phonenum) {
 		this.phonenum = phonenum;
-		phoneList = phonenum.split("\\|");
+		if (this.phonenum != null) {
+			phoneList = phonenum.split("\\|");
+		}
 	}
 	public String getSortLetters() {
 		return sortLetters;
@@ -68,5 +72,8 @@ public class SortModel implements Serializable{
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getPinyin() {
+		return pinyin;
 	}
 }
