@@ -54,6 +54,75 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
             </LinearLayout>
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                
+                <TextView 
+                    android:layout_width="wrap_content"
+               		android:layout_height="wrap_content"
+               		android:text="邮箱："
+                    />
+                
+                <EditText
+                 android:id="@+id/add_detail_email"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:hint="邮箱" >
+
+                 <requestFocus />
+           		</EditText>
+                
+            </LinearLayout>
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                
+                <TextView 
+                    android:layout_width="wrap_content"
+               		android:layout_height="wrap_content"
+               		android:text="Q  Q："
+                    />
+                
+           <EditText
+                 android:id="@+id/add_detail_qq"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true"
+                 android:layout_centerVertical="true"
+                 android:hint="QQ" >
+
+                 <requestFocus />
+           </EditText>
+           </LinearLayout>
+           <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                
+                <TextView 
+                    android:layout_width="wrap_content"
+               		android:layout_height="wrap_content"
+               		android:text="微信："
+                    />
+                
+           <EditText
+                 android:id="@+id/add_detail_wechat"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentLeft="true"
+                 android:layout_centerVertical="true"
+                 android:hint="微信"
+                 android:text="" >
+
+                 <requestFocus />
+           </EditText>
+           </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

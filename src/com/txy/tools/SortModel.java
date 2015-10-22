@@ -19,6 +19,9 @@ public class SortModel implements Serializable{
 	private String name;   //显示的数据
 	private String phonenum;
 	private String sortLetters;  //显示数据拼音的首字母
+	private String email;
+	private String qq;
+	private String wechat;
 	
 	private String[] phoneList;
 	
@@ -47,5 +50,23 @@ public class SortModel implements Serializable{
 	}
 	public String[] getPhoneList() {
 		return phoneList;
+	}
+	public String getWechat() {
+		return wechat;
+	}
+	public void setWechat(String wechat) {
+		this.wechat = wechat;
+	}
+	public String getQq() {
+		return qq;
+	}
+	public void setQq(String qq) {
+		this.qq = qq;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

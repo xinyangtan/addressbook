@@ -66,7 +66,10 @@ public class DatabaseHelper extends SQLiteOpenHelper// 继承SQLiteOpenHelper类
         sBuffer.append("[id] INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ");
         sBuffer.append("[name] TEXT,");
         sBuffer.append("[phonenum] TEXT,");
-        sBuffer.append("[sortLetters] TEXT)");
+        sBuffer.append("[sortLetters] TEXT,");
+        sBuffer.append("[email] TEXT,");
+        sBuffer.append("[qq] TEXT,");
+        sBuffer.append("[wechat] TEXT)");
 
         // 执行创建表的SQL语句
         db.execSQL(sBuffer.toString());

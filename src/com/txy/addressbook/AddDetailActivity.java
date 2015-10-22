@@ -37,6 +37,9 @@ public class AddDetailActivity extends Activity implements OnClickListener{
 	private ImageView headImageView;
 	private EditText nameTV;
 	private LinearLayout phoneLinearLayout;
+	private EditText emailTV;
+	private EditText qqTV;
+	private EditText wechatTV;
 	private SortModel person;
 	private Context context;
 	
@@ -78,6 +81,9 @@ public class AddDetailActivity extends Activity implements OnClickListener{
 		
 		headImageView = (ImageView) findViewById(R.id.add_detail_headimage);
 		nameTV = (EditText) findViewById(R.id.add_detail_name);
+		emailTV = (EditText) findViewById(R.id.add_detail_email);
+		qqTV = (EditText) findViewById(R.id.add_detail_qq);
+		wechatTV = (EditText) findViewById(R.id.add_detail_wechat);
 		phoneLinearLayout = (LinearLayout) findViewById(R.id.add_detail_phonenum_linearlayout);
 		iInflater = LayoutInflater.from(this);
 		
@@ -91,6 +97,9 @@ public class AddDetailActivity extends Activity implements OnClickListener{
 
 	private void initView() {
 		this.nameTV.setText(this.person.getName());
+		this.emailTV.setText(this.person.getEmail());
+		this.qqTV.setText(this.person.getQq());
+		this.wechatTV.setText(this.person.getWechat());
 		if (this.person.getPhoneList() == null) {
 			this.addPhoneItem("", this.mode);// 手机
 		}
@@ -112,16 +121,49 @@ public class AddDetailActivity extends Activity implements OnClickListener{
 			this.nameTV.setEnabled(false); // 头像姓名
 			this.nameTV.setBackground(null);
 			this.nameTV.setTextColor(Color.BLACK);
+			
+			this.emailTV.setEnabled(false); // 
+			this.emailTV.setBackground(null);
+			this.emailTV.setTextColor(Color.BLACK);
+			
+			this.qqTV.setEnabled(false); // 
+			this.qqTV.setBackground(null);
+			this.qqTV.setTextColor(Color.BLACK);
+			
+			this.wechatTV.setEnabled(false); // 
+			this.wechatTV.setBackground(null);
+			this.wechatTV.setTextColor(Color.BLACK);
+			
 			this.titlebarRButton.setText("编辑");// titlebar 按钮
 			this.delButton.setVisibility(View.GONE);//删除按钮
 		} else if (this.mode == EDIT_MODE) {
 			this.nameTV.setEnabled(true);
 			this.nameTV.setBackgroundResource(R.drawable.edittext_bg);
+			
+			this.emailTV.setEnabled(true);
+			this.emailTV.setBackgroundResource(R.drawable.edittext_bg);
+			
+			this.qqTV.setEnabled(true);
+			this.qqTV.setBackgroundResource(R.drawable.edittext_bg);
+
+			this.wechatTV.setEnabled(true);
+			this.wechatTV.setBackgroundResource(R.drawable.edittext_bg);
+			
 			this.titlebarRButton.setText("完成");// titlebar 按钮
 			this.delButton.setVisibility(View.VISIBLE);//删除按钮
 		} else if (this.mode == ADD_MODE) {
 			this.nameTV.setEnabled(true);
 			this.nameTV.setBackgroundResource(R.drawable.edittext_bg);
+
+			this.emailTV.setEnabled(true);
+			this.emailTV.setBackgroundResource(R.drawable.edittext_bg);
+			
+			this.qqTV.setEnabled(true);
+			this.qqTV.setBackgroundResource(R.drawable.edittext_bg);
+
+			this.wechatTV.setEnabled(true);
+			this.wechatTV.setBackgroundResource(R.drawable.edittext_bg);
+			
 			this.titlebarRButton.setText("保存");// titlebar 按钮
 			this.delButton.setVisibility(View.GONE);//删除按钮
 			
@@ -169,6 +211,9 @@ public class AddDetailActivity extends Activity implements OnClickListener{
 			}
 		}
 		this.person.setPhonenum(phoneString);
+		this.person.setEmail(this.emailTV.getText().toString());
+		this.person.setQq(this.qqTV.getText().toString());
+		this.person.setWechat(this.wechatTV.getText().toString());
 	}
 	
 	private void call(String num) {

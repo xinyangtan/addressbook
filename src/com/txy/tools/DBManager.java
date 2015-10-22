@@ -36,8 +36,8 @@ public class DBManager
         try
         {
             db.execSQL("INSERT INTO " + DatabaseHelper.TABLE_NAME
-                        + " VALUES(null, ?, ?, ?)", new Object[] { person.getName(),
-                        person.getPhonenum(), person.getSortLetters() });
+                        + " VALUES(null, ?, ?, ?, ?, ?, ?)", new Object[] { person.getName(),
+                        person.getPhonenum(), person.getSortLetters(), person.getEmail(), person.getQq(), person.getWechat() });
                 // 带两个参数的execSQL()方法，采用占位符参数？，把参数值放在后面，顺序对应
                 // 一个参数的execSQL()方法中，用户输入特殊字符时需要转义
                 // 使用占位符有效区分了这种情况
@@ -62,9 +62,10 @@ public class DBManager
         {
             for (SortModel person : persons)
             {
-                db.execSQL("INSERT INTO " + DatabaseHelper.TABLE_NAME
-                        + " VALUES(null, ?, ?, ?)", new Object[] { person.getName(),
-                        person.getPhonenum(), person.getSortLetters() });
+            	db.execSQL("INSERT INTO " + DatabaseHelper.TABLE_NAME
+                        + " VALUES(null, ?, ?, ?, ?, ?, ?)", new Object[] { person.getName(),
+                        person.getPhonenum(), person.getSortLetters(), person.getEmail(), person.getQq(), person.getWechat() });
+                
                 // 带两个参数的execSQL()方法，采用占位符参数？，把参数值放在后面，顺序对应
                 // 一个参数的execSQL()方法中，用户输入特殊字符时需要转义
                 // 使用占位符有效区分了这种情况
@@ -93,6 +94,10 @@ public class DBManager
             person.setName(c.getString(c.getColumnIndex("name")), 
             		c.getString(c.getColumnIndex("sortLetters")));
             person.setPhonenum(c.getString(c.getColumnIndex("phonenum")));
+
+            person.setEmail(c.getString(c.getColumnIndex("email")));
+            person.setQq(c.getString(c.getColumnIndex("qq")));
+            person.setWechat(c.getString(c.getColumnIndex("wechat")));
             persons.add(person);
         }
         c.close();
@@ -104,6 +109,9 @@ public class DBManager
         cv.put("name", person.getName());
         cv.put("phonenum", person.getPhonenum());
         cv.put("sortLetters", person.getSortLetters());
+        cv.put("email", person.getEmail());
+        cv.put("qq", person.getQq());
+        cv.put("wechat", person.getWechat());
         String[] args = {String.valueOf(person.get_id())};
         return db.update(DatabaseHelper.TABLE_NAME, cv, "id=?",args);   
 //	        db.execSQL("UPDATE " + DatabaseHelper.TABLE_NAME + " t SET"
