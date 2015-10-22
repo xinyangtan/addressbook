@@ -17,25 +17,25 @@
             android:id="@+id/phonenum_item_msgButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/addressbook_ico" />
+            android:src="@drawable/phonenum_item_msg" />
 
         <ImageButton
             android:id="@+id/phonenum_item_callButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/addressbook_ico" />
+            android:src="@drawable/phonenum_item_call" />
 
         <ImageButton
             android:id="@+id/phonenum_item_addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/add" />
+            android:src="@drawable/phonenum_item_add" />
 
         <ImageButton
             android:id="@+id/phonenum_item_delButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/add" />
+            android:src="@drawable/phonenum_item_del" />
 
     </LinearLayout>
 
